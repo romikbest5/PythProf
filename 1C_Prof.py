@@ -1,4 +1,5 @@
 import random
+import numpy as np
 class question():
     def __init__(self,quest,answers):
         self.quest = quest
@@ -39,6 +40,13 @@ def all_quests(quest_list):
         counter_error+=que.get_answer(ans)
         print("\n\n")
 
+def random_all(quest_list):
+    random_quest_list = np.random.choise(quest_list,size=len(quest_list),replace=False)
+    for i in random_quest_list:
+        i.print_quest()
+        ans = input()
+        counter_error+=i.get_answer(ans)
+        print("\n\n")
     
 quest_list = []
 global counter_error
@@ -66,9 +74,11 @@ files = []
 #g = open("test7.txt",encoding = "utf-8", mode='r')
 #files.append(g.read())
 
-h = open("test8.txt", encoding = "utf-8", mode = "r")
-files.append(h.read())
+#h = open("test8.txt", encoding = "utf-8", mode = "r")
+#files.append(h.read())
 
+j = open("test9.txt", encoding = "utf-8", mode = "r")
+files.append(j.read())
 
 for file in files:
     questions_not_parsed = file.split("\n\n\n")
@@ -87,5 +97,6 @@ for file in files:
 
 
 #random_quests(quest_list)
-all_quests(quest_list)
-print(counter_error)
+random_all(quest_list)
+#all_quests(quest_list)
+#print(counter_error)
