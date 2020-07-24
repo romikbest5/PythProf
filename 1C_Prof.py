@@ -63,9 +63,11 @@ files = []
 #f = open("test6.txt",encoding = "utf-8", mode='r')
 #files.append(f.read())
 
-g = open("test7.txt",encoding = "utf-8", mode='r')
-files.append(g.read())
+#g = open("test7.txt",encoding = "utf-8", mode='r')
+#files.append(g.read())
 
+h = open("test8.txt", encoding = "utf-8", mode = "r")
+files.append(h.read())
 
 
 for file in files:
