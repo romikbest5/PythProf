@@ -86,6 +86,6 @@ for file in files:
         quest_list.append(question(quest,ans))
 
 
-random_quests(quest_list)
-#all_quests(quest_list)
-#print(counter_error)
+#random_quests(quest_list)
+all_quests(quest_list)
+print(counter_error)
