@@ -41,6 +41,7 @@ def all_quests(quest_list):
         print("\n\n")
 
 def random_all(quest_list):
+    global counter_error
     random_quest_list = np.random.choice(quest_list,size=len(quest_list),replace=False)
     for i in random_quest_list:
         i.print_quest()
