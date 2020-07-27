@@ -78,8 +78,11 @@ files = []
 #h = open("test8.txt", encoding = "utf-8", mode = "r")
 #files.append(h.read())
 
-j = open("test9.txt", encoding = "utf-8", mode = "r")
-files.append(j.read())
+#j = open("test9.txt", encoding = "utf-8", mode = "r")
+#files.append(j.read())
+
+h = open("test10.txt", encoding = "utf-8", mode = "r")
+files.append(h.read())
 
 for file in files:
     questions_not_parsed = file.split("\n\n\n")
