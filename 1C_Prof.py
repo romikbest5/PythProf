@@ -30,7 +30,9 @@ def random_quests(quest_list):
     while(1):
         num = random.randint(1,len(quest_list)-1)
         quest_list[num].print_quest()
-        ans = input()
+        ans = -1
+        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+            ans = input()
         if int(ans) == 0:
             break
         quest_list[num].get_answer(ans)
@@ -41,7 +43,9 @@ def random_quests(quest_list):
     global quest_list_errors
     for que in quest_list_errors:
         que.print_quest()
-        ans = input()
+        ans = -1
+        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+            ans = input()
         counter_error+=que.get_answer(ans) 
         print("\n\n")
 
@@ -49,7 +53,9 @@ def all_quests(quest_list):
     global counter_error
     for que in quest_list:
         que.print_quest()
-        ans = input()
+        ans = -1
+        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+            ans = input()
         if int(ans) == 0:
             break
         counter_error+=que.get_answer(ans) 
@@ -59,7 +65,9 @@ def all_quests(quest_list):
     global quest_list_errors
     for que in quest_list_errors:
         que.print_quest()
-        ans = input()
+        ans = -1
+        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+            ans = input()
         counter_error+=que.get_answer(ans) 
         print("\n\n")
 def random_all(quest_list):
@@ -67,7 +75,9 @@ def random_all(quest_list):
     random_quest_list = np.random.choice(quest_list,size=len(quest_list),replace=False)
     for i in random_quest_list:
         i.print_quest()
-        ans = input()
+        ans = -1
+        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+            ans = input()
         if int(ans) == 0:
             break
         counter_error+=i.get_answer(ans)
@@ -77,7 +87,9 @@ def random_all(quest_list):
     global quest_list_errors
     for que in quest_list_errors:
         que.print_quest()
-        ans = input()
+        ans = -1
+        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+            ans = input()
         counter_error+=que.get_answer(ans) 
         print("\n\n")
         
@@ -90,8 +102,9 @@ global counter_error
 counter_error = 0
 
 files = []
-#a = open("test1.txt",encoding='utf-8', mode='r')
-#files.append(a.read())
+
+a = open("test1.txt",encoding='utf-8', mode='r')
+files.append(a.read())
 
 #b = open("test2.txt",encoding='utf-8', mode='r')
 #files.append(b.read())
@@ -117,8 +130,8 @@ files = []
 #j = open("test9.txt", encoding = "utf-8", mode = "r")
 #files.append(j.read())
 
-h = open("test10.txt", encoding = "utf-8", mode = "r")
-files.append(h.read())
+#h = open("test10.txt", encoding = "utf-8", mode = "r")
+#files.append(h.read())
 
 for file in files:
     questions_not_parsed = file.split("\n\n\n")
