@@ -16,6 +16,8 @@ class question():
             return 0
         else:
             print("Неправильно")
+            global quest_list_errors
+            quest_list_errors.append(self)
             for i in self.answers:
                 if i[1] == True:
                     print("Правильный ответ: \n" +i[0])
@@ -29,7 +31,18 @@ def random_quests(quest_list):
         num = random.randint(1,len(quest_list)-1)
         quest_list[num].print_quest()
         ans = input()
+        if int(ans) == 0:
+            break
         quest_list[num].get_answer(ans)
+        print("\n\n")
+    global counter_error
+    print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
+    print("Повторим вопросы с ошибками")
+    global quest_list_errors
+    for que in quest_list_errors:
+        que.print_quest()
+        ans = input()
+        counter_error+=que.get_answer(ans) 
         print("\n\n")
 
 def all_quests(quest_list):
@@ -37,19 +50,42 @@ def all_quests(quest_list):
     for que in quest_list:
         que.print_quest()
         ans = input()
-        counter_error+=que.get_answer(ans)
+        if int(ans) == 0:
+            break
+        counter_error+=que.get_answer(ans) 
         print("\n\n")
-
+    print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
+    print("Повторим вопросы с ошибками")
+    global quest_list_errors
+    for que in quest_list_errors:
+        que.print_quest()
+        ans = input()
+        counter_error+=que.get_answer(ans) 
+        print("\n\n")
 def random_all(quest_list):
     global counter_error
     random_quest_list = np.random.choice(quest_list,size=len(quest_list),replace=False)
     for i in random_quest_list:
         i.print_quest()
         ans = input()
+        if int(ans) == 0:
+            break
         counter_error+=i.get_answer(ans)
         print("\n\n")
-    
+    print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
+    print("Повторим вопросы с ошибками")
+    global quest_list_errors
+    for que in quest_list_errors:
+        que.print_quest()
+        ans = input()
+        counter_error+=que.get_answer(ans) 
+        print("\n\n")
+        
 quest_list = []
+
+global quest_list_errors
+quest_list_errors = []
+
 global counter_error
 counter_error = 0
 
