@@ -27,6 +27,8 @@ class question():
 
 
 def random_quests(quest_list):
+    counter_error = 0
+    success_counter = 0
     while(1):
         num = random.randint(1,len(quest_list)-1)
         quest_list[num].print_quest()
@@ -35,9 +37,15 @@ def random_quests(quest_list):
             ans = input()
         if int(ans) == 0:
             break
-        quest_list[num].get_answer(ans)
+        #quest_list[num].get_answer(ans)
+        if quest_list[num].get_answer(ans) == 0:
+            success_counter +=1
+        else:
+            counter_error +=1
         print("\n\n")
-    global counter_error
+        print(" Ошибок: "+str(counter_error)+" Правильных: "+str(success_counter))
+        print("\n\n")
+    
     print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
     print("Повторим вопросы с ошибками")
     global quest_list_errors
@@ -49,34 +57,13 @@ def random_quests(quest_list):
         counter_error+=que.get_answer(ans) 
         print("\n\n")
 
-def all_quests(quest_list):
-    global counter_error
-    counter_of_quest = len(quest_list)
-    for que in quest_list:
-        que.print_quest()
-        ans = -1
-        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
-            ans = input()
-        if int(ans) == 0:
-            break
-        counter_error+=que.get_answer(ans)
-        counter_of_quest -=1
-        print("Осталось вопросов: "+str(counter_of_quest))
-        print("\n\n")
-    print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
-    print("Повторим вопросы с ошибками")
-    global quest_list_errors
-    for que in quest_list_errors:
-        que.print_quest()
-        ans = -1
-        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
-            ans = input()
-        counter_error+=que.get_answer(ans) 
-        print("\n\n")
 
-        
+
+
+
 def random_all(quest_list):
-    global counter_error
+    counter_error = 0
+    success_counter = 0
     counter_of_quest = len(quest_list)
     random_quest_list = np.random.choice(quest_list,size=len(quest_list),replace=False)
     for i in random_quest_list:
@@ -86,10 +73,14 @@ def random_all(quest_list):
             ans = input()
         if int(ans) == 0:
             break
-        counter_error+=i.get_answer(ans)
+        #counter_error+=i.get_answer(ans)
+        if i.get_answer(ans) == 0:
+            success_counter +=1
+        else:
+            counter_error +=1
         print("\n\n")
         counter_of_quest -=1
-        print("Осталось вопросов: "+str(counter_of_quest))
+        print("Осталось вопросов: "+str(counter_of_quest)+" Ошибок: "+str(counter_error)+" Правильных: "+str(success_counter))
     print("Повторим вопросы с ошибками")
     print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
     global quest_list_errors
@@ -129,14 +120,14 @@ files = []
 #f = open("test6.txt",encoding = "utf-8", mode='r')
 #files.append(f.read())
 
-g = open("test7.txt",encoding = "utf-8", mode='r')
+g = open("test7.txt", encoding = "utf-8", mode = "r")
 files.append(g.read())
 
-#h = open("test8.txt", encoding = "utf-8", mode = "r")
-#files.append(h.read())
+h = open("test8.txt", encoding = "utf-8", mode = "r")
+files.append(h.read())
 
-#j = open("test9.txt", encoding = "utf-8", mode = "r")
-#files.append(j.read())
+j = open("test9.txt", encoding = "utf-8", mode = "r")
+files.append(j.read())
 
 #h = open("test10.txt", encoding = "utf-8", mode = "r")
 #files.append(h.read())
