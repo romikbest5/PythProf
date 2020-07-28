@@ -90,7 +90,8 @@ def random_all(quest_list):
         print("\n\n")
         counter_of_quest -=1
         print("Осталось вопросов: "+str(counter_of_quest))
-        print("Повторим вопросы с ошибками")
+    print("Повторим вопросы с ошибками")
+    print("\n\n\n\n\n\n Ошибок: "+str(counter_error))
     global quest_list_errors
     for que in quest_list_errors:
         que.print_quest()
@@ -110,26 +111,26 @@ counter_error = 0
 
 files = []
 
-a = open("test1.txt",encoding='utf-8', mode='r')
-files.append(a.read())
+#a = open("test1.txt",encoding='utf-8', mode='r')
+#files.append(a.read())
 
-b = open("test2.txt",encoding='utf-8', mode='r')
-files.append(b.read())
+#b = open("test2.txt",encoding='utf-8', mode='r')
+#files.append(b.read())
 
-c = open("test3.txt",encoding='utf-8', mode='r')
-files.append(c.read())
+#c = open("test3.txt",encoding='utf-8', mode='r')
+#files.append(c.read())
 
-d = open("test4.txt",encoding='utf-8', mode='r')
-files.append(d.read())
+#d = open("test4.txt",encoding='utf-8', mode='r')
+#files.append(d.read())
 
-e = open("test5.txt",encoding = "utf-8", mode='r')
-files.append(e.read())
+#e = open("test5.txt",encoding = "utf-8", mode='r')
+#files.append(e.read())
 
-f = open("test6.txt",encoding = "utf-8", mode='r')
-files.append(f.read())
+#f = open("test6.txt",encoding = "utf-8", mode='r')
+#files.append(f.read())
 
-#g = open("test7.txt",encoding = "utf-8", mode='r')
-#files.append(g.read())
+g = open("test7.txt",encoding = "utf-8", mode='r')
+files.append(g.read())
 
 #h = open("test8.txt", encoding = "utf-8", mode = "r")
 #files.append(h.read())
@@ -156,7 +157,7 @@ for file in files:
         quest_list.append(question(quest,ans))
 
 
-random_quests(quest_list)
-#random_all(quest_list)
+#random_quests(quest_list)
+random_all(quest_list)
 #all_quests(quest_list)
 #print(counter_error)
