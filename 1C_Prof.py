@@ -1,5 +1,6 @@
 import random
 import numpy as np
+
 class question():
     def __init__(self,quest,answers):
         self.quest = quest
@@ -33,7 +34,7 @@ def random_quests(quest_list):
         num = random.randint(1,len(quest_list)-1)
         quest_list[num].print_quest()
         ans = -1
-        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+        while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
             ans = input()
         if int(ans) == 0:
             break
@@ -52,7 +53,7 @@ def random_quests(quest_list):
     for que in quest_list_errors:
         que.print_quest()
         ans = -1
-        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+        while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
             ans = input()
         counter_error+=que.get_answer(ans) 
         print("\n\n")
@@ -69,7 +70,7 @@ def random_all(quest_list):
     for i in random_quest_list:
         i.print_quest()
         ans = -1
-        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+        while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
             ans = input()
         if int(ans) == 0:
             break
@@ -87,7 +88,7 @@ def random_all(quest_list):
     for que in quest_list_errors:
         que.print_quest()
         ans = -1
-        while ans not in ['1','2','3','4','5','6','7','8','9','0']:
+        while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
             ans = input()
         counter_error+=que.get_answer(ans) 
         print("\n\n")
@@ -102,36 +103,38 @@ counter_error = 0
 
 files = []
 
-#a = open("test1.txt",encoding='utf-8', mode='r')
-#files.append(a.read())
-
-#b = open("test2.txt",encoding='utf-8', mode='r')
-#files.append(b.read())
-
-#c = open("test3.txt",encoding='utf-8', mode='r')
-#files.append(c.read())
-
-#d = open("test4.txt",encoding='utf-8', mode='r')
-#files.append(d.read())
-
-#e = open("test5.txt",encoding = "utf-8", mode='r')
-#files.append(e.read())
-
-#f = open("test6.txt",encoding = "utf-8", mode='r')
+#f = open("test1.txt", encoding = "utf-8", mode = "r")
 #files.append(f.read())
 
-g = open("test7.txt", encoding = "utf-8", mode = "r")
-files.append(g.read())
+#f = open("test2.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
 
-h = open("test8.txt", encoding = "utf-8", mode = "r")
-files.append(h.read())
+#f = open("test3.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
 
-j = open("test9.txt", encoding = "utf-8", mode = "r")
-files.append(j.read())
+#f = open("test4.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
 
-#h = open("test10.txt", encoding = "utf-8", mode = "r")
-#files.append(h.read())
+#f = open("test5.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
 
+#f = open("test6.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
+
+#f = open("test7.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
+
+#f = open("test8.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
+
+#f = open("test9.txt", encoding = "utf-8", mode = "r")
+#files.append(f.read())
+
+f = open("test10.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
+
+f = open("test11.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 for file in files:
     questions_not_parsed = file.split("\n\n\n")
     for q in questions_not_parsed:
@@ -150,5 +153,5 @@ for file in files:
 
 #random_quests(quest_list)
 random_all(quest_list)
-#all_quests(quest_list)
+
 #print(counter_error)
