@@ -75,10 +75,18 @@ def random_all(quest_list):
         if int(ans) == 0:
             break
         #counter_error+=i.get_answer(ans)
-        if i.get_answer(ans) == 0:
-            success_counter +=1
-        else:
-            counter_error +=1
+        while True:
+            try:
+                if i.get_answer(ans) == 0:
+                    success_counter +=1
+                else:
+                    counter_error +=1
+                break
+            except:
+                print("Некорректный ответ, try again")
+                ans = -1
+                while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
+                    ans = input()
         print("\n\n")
         counter_of_quest -=1
         print("Осталось вопросов: "+str(counter_of_quest)+" Ошибок: "+str(counter_error)+" Правильных: "+str(success_counter))
@@ -90,7 +98,15 @@ def random_all(quest_list):
         ans = -1
         while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
             ans = input()
-        counter_error+=que.get_answer(ans) 
+        while True:
+            try:
+                counter_error+=que.get_answer(ans)
+                break
+            except:
+                print("Некорректный ответ, try again")
+                ans  = -1
+                while str(ans) not in ['1','2','3','4','5','6','7','8','9','0']:
+                    ans = input()
         print("\n\n")
         
 quest_list = []
@@ -103,32 +119,32 @@ counter_error = 0
 
 files = []
 
-#f = open("test1.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test1.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test2.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test2.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test3.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test3.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test4.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test4.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test5.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test5.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test6.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test6.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test7.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test7.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test8.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test8.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
-#f = open("test9.txt", encoding = "utf-8", mode = "r")
-#files.append(f.read())
+f = open("test9.txt", encoding = "utf-8", mode = "r")
+files.append(f.read())
 
 f = open("test10.txt", encoding = "utf-8", mode = "r")
 files.append(f.read())
