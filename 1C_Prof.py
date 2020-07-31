@@ -119,38 +119,42 @@ counter_error = 0
 
 files = []
 
-f = open("test1.txt", encoding = "utf-8", mode = "r")
+##f = open("test1.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test2.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test3.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test4.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test5.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test6.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test7.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test8.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test9.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test10.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+##
+##f = open("test11.txt", encoding = "utf-8", mode = "r")
+##files.append(f.read())
+
+f = open("test12.txt", encoding = "utf-8", mode = "r")
 files.append(f.read())
 
-f = open("test2.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test3.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test4.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test5.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test6.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test7.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test8.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test9.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test10.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
-
-f = open("test11.txt", encoding = "utf-8", mode = "r")
-files.append(f.read())
 for file in files:
     questions_not_parsed = file.split("\n\n\n")
     for q in questions_not_parsed:
